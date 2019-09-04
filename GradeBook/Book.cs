@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace GradeBook
 {
@@ -32,6 +33,43 @@ namespace GradeBook
 
         public void getStudentName() {
             Console.WriteLine(studentName);
+        }
+
+        public void reverseGrades() {
+            grades.Reverse();
+        }
+
+        public void averageGrade() {
+            var sumOfList = 0.0;
+            var averageList = 0.0;
+            var countOfList = grades.Count;
+
+            foreach (var grade in grades) {
+                sumOfList += grade;
+            }
+            averageList = sumOfList / countOfList;
+
+            Console.WriteLine(averageList);
+
+
+        }
+
+        private void sortList() {
+            grades.Sort();
+        }
+        
+
+        public double maxGrade() {
+
+            sortList();
+            return grades.Last();
+            
+        }
+
+        public double minGrade() {
+            sortList();
+            return grades.First();
+
         }
     }
 }
