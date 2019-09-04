@@ -7,6 +7,15 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
+            var student1 = new Book("Ivan");
+            student1.addSingleGrade(10.23);
+            var gradesOfIvan = new double[]{ 12.34,23.34,25.36};
+            student1.addMultipleGrades(gradesOfIvan);
+            student1.getStudentGrades();
+            student1.getStudentName();
+
+            
+            /*
             // Arrays: calculate the average
 
             double[] gradesArray = new double[3] { 12.3, 23.4, 34.54 };
@@ -62,7 +71,7 @@ namespace GradeBook
             }
 
 
-
+     */
         }
     }
 }
