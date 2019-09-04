@@ -97,6 +97,75 @@ namespace GradeBook
                 }
             }
 
+        // Make sure you have sorted list !
+        public string binarySearch(double number) {
+
+            int firstDevision =(int)grades.Count / 2;
+            int secondDevisionUnder = firstDevision / 2;
+            int thirdDevisionAbove = (firstDevision / 2) + firstDevision;
+
+             if (grades[firstDevision] > number) {
+
+                if (grades[secondDevisionUnder] > number)
+                {
+                    for (var i = 0; i < secondDevisionUnder; i++)
+                    {
+                        if (number == grades[i])
+                        {
+                            return $"The {number} is in the collection on index place";
+                        }
+                        else
+                        {
+                            return "The number is not found in the collection";
+                        }
+                    }
+                }
+                else {
+                    for (var j = secondDevisionUnder; j < firstDevision; j++) {
+                        if (number == grades[j])
+                        {
+                            return $"The {number} is in the collection on index place";
+                        }
+                        else
+                        {
+                            return "The number is not found in the collection";
+                        }
+                    }
+                }
+            } else {
+
+                if (grades[thirdDevisionAbove] < number)
+                {
+                    for (var k = thirdDevisionAbove; k <= grades.Count; k++)
+                    {
+                        if (number == grades[k])
+                        {
+                            return $"The {number} is in the collection on index place";
+                        }
+                        else
+                        {
+                            return "The number is not found in the collection";
+                        }
+                    }
+
+                }
+                else {
+                    for (var t=firstDevision; t<= thirdDevisionAbove; t++) {
+                        if (number == grades[t])
+                        {
+                            return $"The {number} is in the collection on index place";
+                        }
+                        else
+                        {
+
+                            return "The number is not found in the collection";
+                        }
+                    }
+                }
+            }
+   
         }
+    }
+      
     }
 

@@ -7,7 +7,7 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
-            var student1 = new Book("Ivan");
+                var student1 = new Book("Ivan");
             student1.addSingleGrade(10.23);
             var gradesOfIvan = new double[]{ 12.34,23.34,25.36,5.34,100.00,2.45};
             student1.addMultipleGrades(gradesOfIvan);
@@ -17,6 +17,7 @@ namespace GradeBook
 
             student1.manualSortOfList();
             student1.getStudentGrades();
+            student1.binarySearch(10.23);
 
             /*
             student1.getStudentGrades();
