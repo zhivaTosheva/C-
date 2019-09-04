@@ -71,5 +71,32 @@ namespace GradeBook
             return grades.First();
 
         }
+
+        public void manualSortOfList() {
+
+            double temp = 0.0;
+            for (var i =0; i<=grades.Count -1; i++) {
+
+                for (var j=0; j<grades.Count - 1;j++)
+                {  
+                   // Console.WriteLine(i + "," + j);
+                    
+                    if (grades[i] > grades[j])
+                    {
+                       // Console.Write(grades[i] + "," + grades[j]);
+                        temp = grades[j];
+                        grades[j] = grades[i];
+                        grades[i] = temp;
+
+                    }
+
+                    temp = 0.0;
+                }
+                    
+                    
+                }
+            }
+
+        }
     }
-}
+

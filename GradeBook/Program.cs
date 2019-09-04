@@ -11,19 +11,27 @@ namespace GradeBook
             student1.addSingleGrade(10.23);
             var gradesOfIvan = new double[]{ 12.34,23.34,25.36,5.34,100.00,2.45};
             student1.addMultipleGrades(gradesOfIvan);
-           // student1.getStudentGrades();
+            student1.getStudentGrades();
+
+            Console.WriteLine("-------------------------");
+
+            student1.manualSortOfList();
+            student1.getStudentGrades();
+
+            /*
+            student1.getStudentGrades();
             student1.getStudentName();
             student1.reverseGrades();
             student1.getStudentGrades();
 
-            //student1.averageGrade();
+            student1.averageGrade();
 
             var maxGrade = student1.maxGrade();
             
             var minGrade = student1.minGrade();
 
             Console.WriteLine(maxGrade + "," + minGrade);
-            
+            */
 
 
             /*
