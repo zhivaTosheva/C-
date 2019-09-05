@@ -121,7 +121,7 @@ namespace GradeBook
             //Console.WriteLine(mid);
            // var newMid = mid + (max - mid) / 2;
 
-            while (mid <= max + 1 && mid >= min -1) {
+            while (mid <= max && mid >= min) {
 
 
                 if (number < grades[min] || number > grades[max]) {
@@ -137,17 +137,21 @@ namespace GradeBook
                 else if (number > grades[mid])
                 {
                     mid = mid + 1;
-                    if (mid == max + 1) {
+
+                    // Check if the grade is less than the next. If it is, this means it does not exist in the collection
+                    if (number < grades[mid]) {
 
                         Console.WriteLine("The item is not in the collection");
                         break;
                     }
-                    Console.WriteLine(grades[mid]);
+                    //Console.WriteLine(grades[mid]);
 
                 } else if (number < grades[mid])
                 {
                     mid = mid - 1;
-                    if (mid == min - 1) {
+
+                    // Check if the grade is more than the next one. If it is, this means it does not exist in the collection
+                    if (number > grades[mid]) {
                         Console.WriteLine("The item is not in the collection");
                         break;
                     }

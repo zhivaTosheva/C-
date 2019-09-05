@@ -18,7 +18,7 @@ namespace GradeBook
             student1.manualSortOfList();
             student1.reverseGrades();
             student1.getStudentGrades();
-            student1.binarySearch(12.34);
+            student1.binarySearch(150);
 
             /*
             student1.getStudentGrades();
