@@ -16,8 +16,9 @@ namespace GradeBook
             Console.WriteLine("-------------------------");
 
             student1.manualSortOfList();
+            student1.reverseGrades();
             student1.getStudentGrades();
-            student1.binarySearch(10.23);
+            student1.binarySearch(12.34);
 
             /*
             student1.getStudentGrades();
