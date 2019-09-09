@@ -46,7 +46,7 @@ namespace GradeBook
             grades.Reverse();
         }
 
-        public void averageGrade()
+        public double averageGrade()
         {
             var sumOfList = 0.0;
             var averageList = 0.0;
@@ -58,7 +58,7 @@ namespace GradeBook
             }
             averageList = sumOfList / countOfList;
 
-            Console.WriteLine(averageList);
+          return averageList;
 
 
         }
