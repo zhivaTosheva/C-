@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace GradeBook
 {
-    class Book
+     public class Book
     {
         private string studentName;
         private List<double> grades;
