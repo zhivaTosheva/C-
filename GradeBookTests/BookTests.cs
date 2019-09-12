@@ -1,13 +1,14 @@
+using GradeBook;
 using System;
 using Xunit;
-using GradeBook;
+
 
 namespace GradeBookTests
 {
     public class BookTests
     {
         [Fact]
-        public void Test1()
+        public void CheckForCorrectAggrecatedGrades()
         {
             var studentTest = new Book("Zhiva");
 
@@ -21,6 +22,29 @@ namespace GradeBookTests
 
 
             Assert.Equal(28,Math.Round(checkAvrgGrade));
+
+
+
+        }
+
+        [Fact]
+        public void CheckForCorrectRefference() {
+
+            var bookCheck1 = createBook("Ivo");
+            var bookCheck2 = createBook("Ivan");
+
+            Assert.Equal("Ivo", bookCheck1.getStudentName());
+            Assert.Equal("Ivan", bookCheck2.getStudentName());
+
+            bookCheck1 = bookCheck2;
+
+            Assert.Same(bookCheck1,bookCheck2);
+
+
+        }
+
+        Book createBook(string name) {
+            return new Book(name);
         }
     }
 }

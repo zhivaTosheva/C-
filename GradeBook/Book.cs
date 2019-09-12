@@ -36,9 +36,9 @@ namespace GradeBook
             }
         }
 
-        public void getStudentName()
+        public string getStudentName()
         {
-            Console.WriteLine(studentName);
+            return studentName;
         }
 
         public void reverseGrades()

@@ -81,19 +81,22 @@ namespace GradeBook
             Console.WriteLine(averageList);
 
             // Dictionary 
+            */
 
             var dictionaryStudents = new Dictionary<int,string>();
             dictionaryStudents.Add(1,"Ivan");
             dictionaryStudents.Add(2, "Peter");
             dictionaryStudents.Add(3, "Georgy");
 
-            foreach (KeyValuePair<int,string> k in dictionaryStudents) {
-                Console.WriteLine(k.Key);
-                Console.WriteLine(k.Value);
+            foreach (var k in dictionaryStudents.Keys) {
+                Console.WriteLine(k);
+                Console.WriteLine(dictionaryStudents[k]);
+
+
             }
 
 
-     */
+     
         }
     }
 }
