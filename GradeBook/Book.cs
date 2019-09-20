@@ -5,17 +5,38 @@ using System.Linq;
 
 namespace GradeBook
 {
-     public class Book
+    public class Book
     {
-        private string studentName;
+        //You can put event and call the delegate in the setter ! Look for examples. By default it is empty string. 
+
+        private string _studentName;
+        //(1)private readonly string _studentName;
         private List<double> grades;
 
+        public string LastName {get; private set;} // it will be accest for the getter and will not be available for set(readonly)
+
+        public string studentName
+        {
+            get { return _studentName; }
+            set { _studentName = value; } //<-- You cannot assign value to read only
+        }
+        // constructor
         public Book(string studentName)
         {
             this.studentName = studentName;
             grades = new List<double>();
         }
 
+        public Book(string studentName, string lastName)
+        {
+            this._studentName = studentName;
+            grades = new List<double>();
+            this.LastName = lastName;
+        }
+
+        // getter and setter on the fields 
+
+      
         public void addSingleGrade(double singleGrade)
         {
 
@@ -34,6 +55,15 @@ namespace GradeBook
             {
                 Console.WriteLine(grade);
             }
+        }
+
+        public double getStudentGradesSecond()
+        {
+            foreach (var grade in grades)
+            {
+                return grade;
+            }
+            return 0;
         }
 
         public string getStudentName()
@@ -58,7 +88,7 @@ namespace GradeBook
             }
             averageList = sumOfList / countOfList;
 
-          return averageList;
+            return averageList;
 
 
         }
@@ -111,25 +141,44 @@ namespace GradeBook
             }
         }
 
+        public void checkRef(int refType)
+        {
+            refType++;
+            Console.WriteLine(refType);
+           // return refType;
+        }
+
+        public void checkRefTest(ref int refType)
+        {
+
+            refType++;
+
+        }
+
+
         // Make sure you have sorted list !
         public void binarySearch(double number)
         {
-            
+
             var min = 0;
-            var max = grades.Count -1;
-            var mid = min + (max - min) / 2; 
+            var max = grades.Count - 1;
+            var mid = min + (max - min) / 2;
             //Console.WriteLine(mid);
-           // var newMid = mid + (max - mid) / 2;
+            // var newMid = mid + (max - mid) / 2;
 
-            while (mid <= max && mid >= min) {
+            while (mid <= max && mid >= min)
+            {
 
 
-                if (number < grades[min] || number > grades[max]) {
+                if (number < grades[min] || number > grades[max])
+                {
 
                     Console.WriteLine("The item is not in the collection");
                     break;
 
-                } else if (number == grades[mid]) {
+                }
+                else if (number == grades[mid])
+                {
 
                     Console.WriteLine($"The {number} is in the collection under number {mid}");
                     break;
@@ -139,39 +188,44 @@ namespace GradeBook
                     mid = mid + 1;
 
                     // Check if the grade is less than the next. If it is, this means it does not exist in the collection
-                    if (number < grades[mid]) {
+                    if (number < grades[mid])
+                    {
 
                         Console.WriteLine("The item is not in the collection");
                         break;
                     }
                     //Console.WriteLine(grades[mid]);
 
-                } else if (number < grades[mid])
+                }
+                else if (number < grades[mid])
                 {
                     mid = mid - 1;
 
                     // Check if the grade is more than the next one. If it is, this means it does not exist in the collection
-                    if (number > grades[mid]) {
+                    if (number > grades[mid])
+                    {
                         Console.WriteLine("The item is not in the collection");
                         break;
                     }
 
-                } else if (number == grades[mid]) {
+                }
+                else if (number == grades[mid])
+                {
 
                     Console.WriteLine($"The {number} is in the collection under number {mid}");
                     break;
                 }
             }
-            
-                
-                
 
-            }
+
 
 
         }
 
-    }     
-      
-    //}
+
+    }
+
+}
+
+//}
 

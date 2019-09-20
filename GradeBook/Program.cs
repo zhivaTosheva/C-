@@ -8,18 +8,34 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
-                var student1 = new Book("Ivan");
+            var student1 = new Book("Ivan");
             student1.addSingleGrade(10.23);
             var gradesOfIvan = new double[]{ 12.34,23.34,25.36,5.34,100.00,2.45};
             student1.addMultipleGrades(gradesOfIvan);
             student1.getStudentGrades();
 
             Console.WriteLine("-------------------------");
-
+            /*
             student1.manualSortOfList();
             student1.reverseGrades();
             student1.getStudentGrades();
             student1.binarySearch(150);
+            */
+
+            var checkParamRef = 0; 
+
+            //checkParamRef =  student1.checkRef(checkParamRef);
+
+            student1.checkRef(checkParamRef);
+            Console.WriteLine(checkParamRef);
+
+
+            var checkParamRefTest = 0;
+            student1.checkRef(checkParamRefTest);
+
+            Console.WriteLine(checkParamRefTest);
+
+            
 
             /*
             student1.getStudentGrades();
@@ -81,7 +97,7 @@ namespace GradeBook
             Console.WriteLine(averageList);
 
             // Dictionary 
-            */
+            
 
             var dictionaryStudents = new Dictionary<int,string>();
             dictionaryStudents.Add(1,"Ivan");
@@ -95,7 +111,7 @@ namespace GradeBook
 
             }
 
-
+    */
      
         }
     }

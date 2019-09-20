@@ -41,10 +41,33 @@ namespace GradeBookTests
             Assert.Same(bookCheck1,bookCheck2);
 
 
+
+
+        }
+
+        [Fact]
+
+        public void CheckForPassByRefference() {
+
+            var bookCheck1 = createBook("Ivo");
+            var bookCheck2 = createBook("Ivan");
+
+            setNewGrade(ref bookCheck1,12.12);
+            Assert.Equal(12.12,bookCheck1.getStudentGradesSecond());
+
+
         }
 
         Book createBook(string name) {
             return new Book(name);
         }
+
+        public void setNewGrade(ref Book book, double grade)
+        {
+            book.addSingleGrade(grade);
+
+        }
+
+
     }
 }
